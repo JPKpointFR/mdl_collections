@@ -1,14 +1,17 @@
 
 
-noms = ["Jean", "Sophie", "Martin"]
+def chaine_contient_chiffre(chaine):
+    """for c in chaine:
+        if c.isdigit():
+            return True
+    return False"""
+    return any([c.isdigit() for c in chaine])
 
-noms_supplementaires = ["Christophe", "Zoe"]
 
-# noms.append(noms_supplementaires)
-# for e in noms_supplementaires:
-#     noms.append(e)
-# noms.extend(noms_supplementaires)
-# noms += noms_supplementaires
-noms = noms_supplementaires + noms
-
-print(noms)
+nom = input("Quel est ton nom ? ")
+if nom == "":
+    print("Le nom est vide")
+elif chaine_contient_chiffre(nom):
+    print("Ce nom est invalide, il ne doit pas contenir de chiffres")
+else:
+    print("Bonjour " + nom)
